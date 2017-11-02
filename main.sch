@@ -1092,6 +1092,18 @@ at 27/07/2012 14:02:49</description>
 <text x="-4.5466" y="2.921" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-5.5118" y="-5.3086" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
 </package>
+<package name="TO127P254X533-3">
+<pad name="1" x="-2.54" y="-2.54" drill="0.9906"/>
+<pad name="2" x="-1.27" y="0" drill="0.9906" shape="square"/>
+<pad name="3" x="0" y="-2.54" drill="0.9906" shape="square"/>
+<wire x1="-1.4478" y1="-2.8448" x2="-1.0414" y2="-2.8448" width="0.1524" layer="21"/>
+<wire x1="-3.6322" y1="-2.3876" x2="1.3208" y2="-1.27" width="0" layer="21" curve="-205"/>
+<wire x1="1.3208" y1="-1.27" x2="1.0668" y2="-2.413" width="0" layer="21" curve="-25"/>
+<wire x1="-3.3274" y1="-2.8448" x2="0.7874" y2="-2.8448" width="0.1524" layer="51"/>
+<wire x1="-3.3274" y1="-2.8448" x2="0.7874" y2="-2.8448" width="0" layer="51" curve="-255"/>
+<text x="-5.842" y="1.397" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-6.8072" y="-5.8928" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="LTC3440EMSPBF">
@@ -1133,6 +1145,17 @@ at 27/07/2012 14:02:49</description>
 <wire x1="17.78" y1="22.86" x2="-17.78" y2="22.86" width="0.4064" layer="94"/>
 <text x="-4.7244" y="24.3586" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-6.35" y="-31.242" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+</symbol>
+<symbol name="MCP9700A-E/TO">
+<pin name="VDD" x="-17.78" y="0" length="middle" direction="pwr"/>
+<pin name="GND" x="-17.78" y="-5.08" length="middle" direction="pas"/>
+<pin name="VOUT" x="17.78" y="-2.54" length="middle" direction="out" rot="R180"/>
+<wire x1="-12.7" y1="5.08" x2="-12.7" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="-12.7" y1="-10.16" x2="12.7" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="-10.16" x2="12.7" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="-12.7" y2="5.08" width="0.4064" layer="94"/>
+<text x="-4.572" y="6.2738" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-5.2324" y="-12.7508" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1197,6 +1220,30 @@ at 27/07/2012 14:02:49</description>
 <attribute name="OC_NEWARK" value="90T1358" constant="no"/>
 <attribute name="PACKAGE" value="14LGA" constant="no"/>
 <attribute name="SUPPLIER" value="ANALOG DEVICES" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MCP9700A-E/TO" prefix="Q">
+<description>THERMISTOR, LINEAR 10MV/C</description>
+<gates>
+<gate name="A" symbol="MCP9700A-E/TO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO127P254X533-3">
+<connects>
+<connect gate="A" pin="GND" pad="3"/>
+<connect gate="A" pin="VDD" pad="1"/>
+<connect gate="A" pin="VOUT" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="MCP9700A-E/TO" constant="no"/>
+<attribute name="OC_FARNELL" value="1332164" constant="no"/>
+<attribute name="OC_NEWARK" value="17M0676" constant="no"/>
+<attribute name="PACKAGE" value="TO-92-3" constant="no"/>
+<attribute name="SUPPLIER" value="Microchip" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -20670,6 +20717,9 @@ LETTER landscape</description>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="47pF"/>
 <part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="1µF"/>
+<part name="Q2" library="CU in Space" deviceset="MCP9700A-E/TO" device=""/>
+<part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21064,13 +21114,6 @@ LETTER landscape</description>
 <label x="88.646" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="U2_TRIGGER" class="0">
-<segment>
-<pinref part="U1" gate="A" pin="PB0"/>
-<wire x1="45.72" y1="116.84" x2="27.94" y2="116.84" width="0.1524" layer="91"/>
-<label x="27.94" y="116.84" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="U2_RESET" class="0">
 <segment>
 <pinref part="ICSP" gate="A" pin="7"/>
@@ -21083,6 +21126,13 @@ LETTER landscape</description>
 <pinref part="U1" gate="A" pin="PB2"/>
 <wire x1="45.72" y1="111.76" x2="27.94" y2="111.76" width="0.1524" layer="91"/>
 <label x="27.94" y="111.76" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TEMP" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="PA0"/>
+<wire x1="45.72" y1="139.7" x2="38.1" y2="139.7" width="0.1524" layer="91"/>
+<label x="38.1" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -21272,6 +21322,9 @@ LETTER landscape</description>
 <instance part="X2" gate="G$1" x="73.66" y="50.8" rot="MR0"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
+<instance part="Q2" gate="A" x="210.82" y="162.56"/>
+<instance part="P+6" gate="VCC" x="187.96" y="172.72"/>
+<instance part="GND7" gate="1" x="187.96" y="147.32"/>
 </instances>
 <busses>
 </busses>
@@ -21445,6 +21498,12 @@ LETTER landscape</description>
 <wire x1="76.2" y1="43.18" x2="78.74" y2="43.18" width="0.1524" layer="91"/>
 <junction x="78.74" y="43.18"/>
 </segment>
+<segment>
+<pinref part="Q2" gate="A" pin="GND"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="193.04" y1="157.48" x2="187.96" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="157.48" x2="187.96" y2="149.86" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -21535,6 +21594,12 @@ LETTER landscape</description>
 <wire x1="27.94" y1="76.2" x2="25.4" y2="76.2" width="0.1524" layer="91"/>
 <junction x="27.94" y="76.2"/>
 </segment>
+<segment>
+<pinref part="Q2" gate="A" pin="VDD"/>
+<pinref part="P+6" gate="VCC" pin="VCC"/>
+<wire x1="193.04" y1="162.56" x2="187.96" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="162.56" x2="187.96" y2="170.18" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -21620,6 +21685,13 @@ LETTER landscape</description>
 <wire x1="66.04" y1="53.34" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="X2" gate="G$1" pin="SIGNAL"/>
 <wire x1="66.04" y1="50.8" x2="68.58" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TEMP" class="0">
+<segment>
+<pinref part="Q2" gate="A" pin="VOUT"/>
+<wire x1="228.6" y1="160.02" x2="238.76" y2="160.02" width="0.1524" layer="91"/>
+<label x="232.41" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
