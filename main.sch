@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.0">
+<eagle version="8.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -23299,6 +23299,8 @@ Source: www.kingbright.com</description>
 <part name="PAD3" library="Power" deviceset="CRIMP" device=""/>
 <part name="ARMED" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2"/>
 <part name="GND35" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R43" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/5V" package3d_urn="urn:adsk.eagle:package:23502/1" value="2K2Ω"/>
+<part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23368,8 +23370,10 @@ Source: www.kingbright.com</description>
 <instance part="GND7" gate="1" x="88.9" y="20.32"/>
 <instance part="PAD1" gate="1" x="134.62" y="114.3"/>
 <instance part="PAD3" gate="1" x="129.54" y="114.3" rot="R180"/>
-<instance part="ARMED" gate="G$1" x="129.54" y="104.14" rot="R90"/>
-<instance part="GND35" gate="1" x="139.7" y="99.06"/>
+<instance part="ARMED" gate="G$1" x="129.54" y="99.06" rot="R270"/>
+<instance part="GND35" gate="1" x="142.24" y="109.22"/>
+<instance part="R43" gate="G$1" x="142.24" y="99.06"/>
+<instance part="P+8" gate="VCC" x="152.4" y="104.14"/>
 </instances>
 <busses>
 </busses>
@@ -23433,10 +23437,10 @@ Source: www.kingbright.com</description>
 <wire x1="88.9" y1="25.4" x2="88.9" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="ARMED" gate="G$1" pin="C"/>
-<wire x1="134.62" y1="104.14" x2="139.7" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="104.14" x2="139.7" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="PAD1" gate="1" pin="P"/>
 <pinref part="GND35" gate="1" pin="GND"/>
+<wire x1="137.16" y1="114.3" x2="142.24" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="114.3" x2="142.24" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -23497,9 +23501,10 @@ Source: www.kingbright.com</description>
 <label x="79.756" y="48.006" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="137.16" y1="114.3" x2="149.86" y2="114.3" width="0.1524" layer="91"/>
-<label x="144.78" y="114.3" size="1.778" layer="95"/>
-<pinref part="PAD1" gate="1" pin="P"/>
+<pinref part="P+8" gate="VCC" pin="VCC"/>
+<wire x1="152.4" y1="101.6" x2="152.4" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="R43" gate="G$1" pin="2"/>
+<wire x1="152.4" y1="99.06" x2="147.32" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="XTAL1" class="0">
@@ -23709,13 +23714,13 @@ Source: www.kingbright.com</description>
 <segment>
 <label x="88.9" y="114.3" size="1.778" layer="95"/>
 <pinref part="U1" gate="A" pin="PD6"/>
-<wire x1="81.28" y1="114.3" x2="124.46" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="114.3" x2="121.92" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="PAD3" gate="1" pin="P"/>
-<pinref part="ARMED" gate="G$1" pin="A"/>
-<wire x1="124.46" y1="114.3" x2="127" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="114.3" x2="124.46" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="104.14" x2="127" y2="104.14" width="0.1524" layer="91"/>
-<junction x="124.46" y="114.3"/>
+<pinref part="ARMED" gate="G$1" pin="C"/>
+<wire x1="121.92" y1="114.3" x2="127" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="99.06" x2="121.92" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="99.06" x2="121.92" y2="114.3" width="0.1524" layer="91"/>
+<junction x="121.92" y="114.3"/>
 </segment>
 </net>
 <net name="MAIN_TRIGGER" class="0">
@@ -23837,6 +23842,13 @@ Source: www.kingbright.com</description>
 <label x="88.392" y="112.014" size="1.778" layer="95"/>
 <wire x1="81.28" y1="111.76" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="PD7"/>
+</segment>
+</net>
+<net name="N$33" class="0">
+<segment>
+<pinref part="R43" gate="G$1" pin="1"/>
+<pinref part="ARMED" gate="G$1" pin="A"/>
+<wire x1="137.16" y1="99.06" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -25249,6 +25261,20 @@ Nov 13 2017</text>
 </sheet>
 </sheets>
 <errors>
+<approved hash="102,2,43.18,78.74,GND,A_GND,,,,"/>
+<approved hash="102,2,20.32,134.62,GND,A_GND,,,,"/>
+<approved hash="201,2,20.32,134.62,GND,GND\, A_GND,,,,"/>
+<approved hash="201,2,43.18,78.74,GND,GND\, A_GND,,,,"/>
+<approved hash="102,3,187.96,170.18,VCC,AVCC,,,,"/>
+<approved hash="102,3,187.96,149.86,GND,A_GND,,,,"/>
+<approved hash="102,3,114.3,35.56,GND,A_GND,,,,"/>
+<approved hash="102,3,187.96,137.16,VCC,AVCC,,,,"/>
+<approved hash="102,3,187.96,116.84,GND,A_GND,,,,"/>
+<approved hash="201,3,187.96,116.84,GND,GND\, A_GND,,,,"/>
+<approved hash="201,3,114.3,35.56,GND,GND\, A_GND,,,,"/>
+<approved hash="201,3,187.96,149.86,GND,GND\, A_GND,,,,"/>
+<approved hash="201,3,187.96,137.16,VCC,VCC\, AVCC,,,,"/>
+<approved hash="201,3,187.96,170.18,VCC,VCC\, AVCC,,,,"/>
 <approved hash="104,3,48.26,154.94,IC6,VDD,VCC,,,"/>
 <approved hash="104,3,48.26,147.32,IC6,VDDIO,VCC,,,"/>
 <approved hash="104,3,127,88.9,IC7,VSS1,GND,,,"/>
@@ -25268,7 +25294,27 @@ Nov 13 2017</text>
 <approved hash="104,3,152.4,104.14,IC7,RSVD8,GND,,,"/>
 <approved hash="104,3,152.4,101.6,IC7,RSVD9,GND,,,"/>
 <approved hash="104,3,152.4,99.06,IC7,RSVD10,GND,,,"/>
+<approved hash="104,3,182.88,91.44,IC8,VDD_I/O,VCC,,,"/>
+<approved hash="202,3,182.88,68.58,IC8,RESERVED_2,,,,"/>
+<approved hash="202,3,182.88,66.04,IC8,RESERVED,,,,"/>
+<approved hash="104,3,182.88,58.42,IC8,VS,VCC,,,"/>
+<approved hash="202,4,86.36,132.08,XB2,DIN/!CONFIG,,,,"/>
+<approved hash="202,4,86.36,144.78,XB2,!RESET,,,,"/>
+<approved hash="202,4,86.36,96.52,XB2,VREF,,,,"/>
+<approved hash="104,3,193.04,162.56,Q2,VDD,AVCC,,,"/>
+<approved hash="104,3,193.04,129.54,Q4,VDD,AVCC,,,"/>
 <approved hash="106,3,33.02,66.04,GPS_FIX,,,,,"/>
+<approved hash="113,2,40.5113,45.9461,CONSOLE,,,,,"/>
+<approved hash="113,3,124.356,92.606,FRAME1,,,,,"/>
+<approved hash="113,5,124.356,92.606,FRAME2,,,,,"/>
+<approved hash="113,2,124.356,90.066,FRAME3,,,,,"/>
+<approved hash="113,4,124.356,92.606,FRAME4,,,,,"/>
+<approved hash="113,1,131.976,90.066,FRAME5,,,,,"/>
+<approved hash="113,6,131.976,90.066,FRAME6,,,,,"/>
+<approved hash="113,2,68.2837,46.9621,ICSP,,,,,"/>
+<approved hash="113,2,67.31,25.7217,DEBUG,,,,,"/>
+<approved hash="113,7,194.206,131.976,FRAME8,,,,,"/>
+<approved hash="115,2,34.29,157.48,AVCC,,,,,"/>
 </errors>
 </schematic>
 </drawing>
