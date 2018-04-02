@@ -1918,8 +1918,8 @@
 <rectangle x1="29.65" y1="229.7" x2="32.35" y2="230" layer="1"/>
 <rectangle x1="47.2" y1="221.65" x2="62.8" y2="224.35" layer="1"/>
 <rectangle x1="27.2" y1="221.65" x2="42.8" y2="224.35" layer="1"/>
-<rectangle x1="25.6" y1="225.55" x2="44.4" y2="231.45" layer="1"/>
-<rectangle x1="45.6" y1="225.55" x2="64.4" y2="231.45" layer="1"/>
+<rectangle x1="29" y1="225.55" x2="41" y2="231.45" layer="1"/>
+<rectangle x1="49" y1="225.55" x2="61" y2="231.45" layer="1"/>
 <rectangle x1="66.65" y1="211.35" x2="71.65" y2="227.7" layer="1"/>
 <rectangle x1="14.65" y1="227.45" x2="16.85" y2="228.25" layer="1"/>
 <rectangle x1="14" y1="227.45" x2="15.2" y2="229.1" layer="1"/>
@@ -1932,8 +1932,8 @@
 <hole x="60" y="241" drill="3.5"/>
 <rectangle x1="25.5" y1="232.55" x2="44.5" y2="235.45" layer="29"/>
 <rectangle x1="47.3" y1="232.55" x2="62.7" y2="235.45" layer="29"/>
-<rectangle x1="45.5" y1="225.45" x2="64.5" y2="231.55" layer="29"/>
-<rectangle x1="25.5" y1="225.45" x2="44.5" y2="231.55" layer="29"/>
+<rectangle x1="48.8" y1="225.45" x2="61.2" y2="231.55" layer="29"/>
+<rectangle x1="28.8" y1="225.45" x2="41.2" y2="231.55" layer="29"/>
 <rectangle x1="27.3" y1="221.55" x2="42.7" y2="224.45" layer="29"/>
 <rectangle x1="47.3" y1="221.55" x2="62.7" y2="224.45" layer="29"/>
 <rectangle x1="66.65" y1="229.35" x2="71.65" y2="245.7" layer="1"/>
@@ -1972,17 +1972,48 @@
 <vertex x="73" y="246"/>
 </polygon>
 <polygon width="0.1524" layer="46">
-<vertex x="68.75" y="229"/>
-<vertex x="65.75" y="229" curve="90"/>
-<vertex x="65.25" y="228.5" curve="90"/>
-<vertex x="65.75" y="228"/>
-<vertex x="73.5" y="228" curve="90"/>
-<vertex x="74" y="228.5" curve="90"/>
 <vertex x="73.5" y="229"/>
+<vertex x="64" y="229" curve="90"/>
+<vertex x="63.5" y="228.5" curve="90"/>
+<vertex x="64" y="228"/>
+<vertex x="73.75" y="228" curve="90"/>
+<vertex x="74" y="228.5" curve="90"/>
 </polygon>
 <text x="36" y="197.25" size="1.778" layer="21">PROPERTERY OF:
 CARLETON UNIVERSITY IN SPACE</text>
 <text x="32.25" y="215.5" size="1.778" layer="21">CU IN SPACE 2018</text>
+<polygon width="0.15" layer="46">
+<vertex x="46.5" y="225" curve="-90"/>
+<vertex x="46.75" y="225.25"/>
+<vertex x="64.75" y="225.25" curve="-90"/>
+<vertex x="65" y="225" curve="-90"/>
+<vertex x="64.75" y="224.75"/>
+<vertex x="46.75" y="224.75" curve="-90"/>
+</polygon>
+<polygon width="0.15" layer="46">
+<vertex x="46.5" y="232" curve="-90"/>
+<vertex x="46.75" y="232.25"/>
+<vertex x="64.75" y="232.25" curve="-90"/>
+<vertex x="65" y="232" curve="-90"/>
+<vertex x="64.75" y="231.75"/>
+<vertex x="46.75" y="231.75" curve="-90"/>
+</polygon>
+<polygon width="0.15" layer="46">
+<vertex x="43.25" y="225" curve="90"/>
+<vertex x="43" y="225.25"/>
+<vertex x="26" y="225.25" curve="90"/>
+<vertex x="25.75" y="225" curve="90"/>
+<vertex x="26" y="224.75"/>
+<vertex x="43" y="224.75" curve="90"/>
+</polygon>
+<polygon width="0.15" layer="46">
+<vertex x="43.25" y="232" curve="90"/>
+<vertex x="43" y="232.25"/>
+<vertex x="26.25" y="232.25" curve="90"/>
+<vertex x="26" y="232" curve="90"/>
+<vertex x="26.25" y="231.75"/>
+<vertex x="43" y="231.75" curve="90"/>
+</polygon>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">

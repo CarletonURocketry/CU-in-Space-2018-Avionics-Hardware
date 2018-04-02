@@ -1,0 +1,13 @@
+G04 Gerber job file.*
+%TF.FileFunction,JobInfo*%
+%TF.GenerationSoftware,Autodesk,EAGLE,8.6.0*%
+%TF.CreationDate,2018-04-02T23:35:36Z*%
+%TF.Part,Single*%
+%MOMM*%
+%TJ.B_Owner,Colin Andersen <colin.e.andersen@gmail.com>*%
+%TJ.B_ID,PANNEL_Final*%
+%TJ.B_LayerNum,2*%
+%TJ.B_Thickness,1.570000*%
+%TJ.B_Size_X,85.000000*%
+%TJ.B_Size_Y,246.000000*%
+M02*
